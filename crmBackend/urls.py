@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 from crm.views import  add_customer, get_num_by_region, get_num_by_customer,get_num_by_seller, add_sale, get_categories, get_customer, get_customers, get_regions, get_sales, get_sales_by_cat, get_sales_by_customer, get_sales_by_region, get_sales_by_seller, get_salesman, get_salesperson, get_num_by_cat
 
@@ -37,5 +38,4 @@ urlpatterns = [
     path("dashboard/num/cat", get_num_by_cat), 
     path("dashboard/num/customer", get_num_by_customer),
     path("dashboard/num/seller", get_num_by_seller),    
-    
-]
+] + staticfiles_urlpatterns()
